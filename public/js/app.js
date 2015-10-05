@@ -1,21 +1,22 @@
-angular.module('firstApp',[])
+angular.module('routerApp', ['routerRoutes','ngAnimate'])
+
 .controller('mainController',function(){
 	var vm = this;
-	vm.message = 'Welcome!';
-	vm.gadgets = [
-		{name:"Macbook Pro",color:"Silver",price:1688},
-		{name:"Ipad Mini",color:"Silver",price:418}
-	];
-
-	vm.gadgetData = {};
-	vm.addGadget = function() {
-		// add a computer to the list
-			vm.gadgets.push({
-				name: vm.gadgetData.name,
-				color: vm.gadgetData.color,
-				price: vm.gadgetData.pirce
-			});
-			// after our computer has been added, clear the form
-			vm.gadgetData = {};
-		};
+	vm.bigMessage = 'A smooth sea never made skilled sailors';
+})
+.controller('homeController',function(){
+	var vm = this;
+	vm.message = 'This is Home page';
+	// $http.get('http://localhost:8000/api/user')
+	// .then(function(data){
+	// 	vm.user = data.users;
+	// });
+})
+.controller('aboutController',function(){
+	var vm = this;
+	vm.message = 'This is About page';
+})
+.controller('contactController',function(){
+	var vm = this;
+	vm.message = 'This is Contact page';
 })
